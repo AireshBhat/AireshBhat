@@ -1,5 +1,6 @@
 interface SiteConfig {
 	site: string
+	base: string
 	author: string
 	title: string
 	description: string
@@ -10,7 +11,8 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
+	site: 'https://aireshbhat.github.io', // Write here your website url
+	base: '/AireshBhat',
 	author: 'Airesh Bhat', // Site author
 	title: 'An Integral Human', // Site title.
 	description:
