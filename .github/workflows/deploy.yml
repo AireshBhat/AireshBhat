@@ -20,12 +20,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Keep your Node.js version
+          node-version: '22' # Keep your Node.js version
 
       - name: Install Yarn
         run: |
           corepack enable
-          corepack prepare yarn@stable --activate
+          corepack prepare yarn@1.22.19 --activate
 
       - name: Cache Yarn dependencies
         uses: actions/cache@v3
@@ -38,7 +38,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Build site
         run: yarn build
